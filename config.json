@@ -1,0 +1,9 @@
+{
+    "bot": {
+        "prefix": "sug|"
+    },
+    "server" : {
+        "channelListener" : "754701005828128779",
+        "categoryBox" : "755156444550135808"
+    }
+}

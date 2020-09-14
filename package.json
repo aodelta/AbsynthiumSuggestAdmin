@@ -1,0 +1,29 @@
+{
+  "name": "absynthium_suggest_admin",
+  "version": "0.1.0",
+  "description": "Système d'automatisation de suggestion pour l'administration d'Absynthium",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aodelta/AbsynthiumSuggestAdmin.git"
+  },
+  "keywords": [
+    "Suggestion",
+    "Admin",
+    "Absynthium",
+    "Suggest"
+  ],
+  "author": "Delta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aodelta/AbsynthiumSuggestAdmin/issues"
+  },
+  "homepage": "https://github.com/aodelta/AbsynthiumSuggestAdmin#readme",
+  "dependencies": {
+    "@types/node": "^14.10.1",
+    "discord.js": "^12.3.1"
+  }
+}
