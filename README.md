@@ -15,11 +15,11 @@ The bot needs permissions to see messages sent from the channelListener and crea
 
 Here are the settings that you can modify with the config.json and what they mean :
 
-||  |
+|  |  |
 |--|--|
 |bot.prefix|The prefix of you bot commands|
-|server.channelListener|The channel that the bot will be listening to create suggestion
-|server.categoryBox|The category where the bot got p
+|server.channelListener|The channel that the bot will be listening to create suggestion|
+|server.categoryBox|The category where the bot got p|
 
 # Make it up and running
 
