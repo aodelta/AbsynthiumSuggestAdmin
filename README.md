@@ -1,4 +1,5 @@
 
+
 #  AbsynthiumSuggestAdmin
 
 Système d'automatisation de suggestion pour l'administration d'Absynthium
@@ -8,8 +9,17 @@ All the files are available except the config_private.json **(bot token provided
 
 ## prerequisite
 
-The bot needs permissions to see messages sent from the channelListener and creates channel, send messages for the categoryBox (description of both below in settings)
+The bot needs specific channel names and specific permissions in them.\
+Here they are :
+| type | name | permissions |
+| -- | -- | -- |
+| TextChannel | sug<code>&#124;</code>xxxx | 'READ'
+| Category | sug<code>&#124;</code>xxxx | 'WRITE' & 'MANAGE CHANNELS'
 
+Example :
+#sug|whateveryouwant
+and category sug|whateveryouwant
+The only important thing is that it has to start with sug| to be recognized as known channel
 
 ## Settings
 
@@ -44,9 +54,10 @@ Next, create a file named config_private.json and place it next to all other con
 	   }
     }
 
-Now, run the *cmd_compile_ts.bat*.
-If everything compile, well done
-Otherwise, try to solve the rpoblem with the error given. If you can't solve it, send your problem precisely there : https://github.com/aodelta/AbsynthiumSuggestAdmin/issues
+Now, run the *cmd_compile_ts.bat*.\
+If everything compiles fine, well done\
+Otherwise, try to solve the problem with the error given. \
+If you can't solve it, send your problem precisely there: https://github.com/aodelta/AbsynthiumSuggestAdmin/issues
 
 ## Run
 
@@ -54,6 +65,6 @@ Once built, you just need to run the app.js by running the *cmd_start_bot.bat* f
 
 You can still run the *cmd_compile_and_start_bot.bat* file to do all steps in one click, but I'll recommend running them each file at once, to understand better the problems.
 
-If errors occures, same as above.
+If errors occur, same as above.
 
 HF, delta
