@@ -1,12 +1,10 @@
 // creates basic suggestion
 import Discord from 'discord.js'
-import config from './../../config.json'
 
 import { Command } from './../command'
 import { CommandContext } from './../command_context'
 
 import { Embed, color } from './../Utility/embed'
-import { hasPermission } from './../Utility/functions'
 
 export class Suggestion implements Command {
     readonly commandName: string = "suggest"
@@ -19,17 +17,16 @@ export class Suggestion implements Command {
             { self: { removeItSelf: true, timeout:5000 } } )
         }
 
-        let channelListening:Discord.GuildChannel = cmdCtx.msg.guild.channels.cache.get(config.server.channelListener)
-        if(!channelListening) {
-            return Embed.Create(cmdCtx.bot, cmdCtx.msg, color.gray, "Erreur de réception de message",
-            [{title: "Erreur système", content: "L'ID du salon listener est incorrect"}],
-            cmdCtx.msg.channel,
-            { self: { removeItSelf: true, timeout:5000 } } )
+        if (cmdCtx.msg.channel instanceof Discord.GuildChannel) { // If not DMs
+            if(!cmdCtx.msg.channel.name.startsWith("sug|")) {
+                return
+            }
         }
 
-        let args:string[] = [cmdCtx.qArgs[0], cmdCtx.qArgs[1], cmdCtx.qArgs.slice(2).toString()]
+        let args:string[] = [cmdCtx.qArgs[0], cmdCtx.qArgs[1], cmdCtx.qArgs.slice(2).join(" ")]
 
-        let categoryAimed: Discord.GuildChannel = cmdCtx.msg.guild.channels.cache.get(config.server.categoryBox)
+        let categoryAimed = cmdCtx.msg.guild.channels.cache.filter((channel) => channel.type == 'category' && channel.name.startsWith("sug|")).first()
+
         if(!categoryAimed) {
             return Embed.Create(cmdCtx.bot, cmdCtx.msg, color.gray, "Erreur d'envoie de suggestion",
             [{title: "Erreur système", content: "L'ID de la categorie renseignée ne correspond à aucune catégorie sur le serveur"}],

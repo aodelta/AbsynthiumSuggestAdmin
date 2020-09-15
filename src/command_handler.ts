@@ -18,7 +18,7 @@ export class CommandHandler {
     public async handleMessage(bot: Discord.Client, msg: Discord.Message) {
         const commandContext = new CommandContext(bot, msg, this.prefix);
 
-        const matchedCommand = await this.commands.find(command => command.commandName ==commandContext.command);
+        const matchedCommand = this.commands.find(command => command.commandName == commandContext.command);
 
         if(!matchedCommand){
             // Do some stuff

@@ -1,14 +1,15 @@
 import Discord from 'discord.js';
-import config from '../config.json'
 import { CommandHandler } from './command_handler';
 
 export class Client {
     private bot: Discord.Client;
     private commandHandler: CommandHandler;
+    private prefix: string
 
-    constructor() {
+    constructor(prefix:string) {
+        this.prefix = prefix
         this.bot = new Discord.Client();
-        this.commandHandler = new CommandHandler(config.bot.prefix);
+        this.commandHandler = new CommandHandler(this.prefix);
     }
     
     public async start() {
@@ -28,4 +29,4 @@ export class Client {
     }
 }
 
-export let bot: Client = new Client()
+export let bot: Client = new Client("sug|")
