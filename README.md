@@ -7,7 +7,7 @@ Automation suggestions system for Absynthium staff
   
 All the files are available except the config_private.json **(bot token provided)**
 
-## prerequisite
+## Prerequisite
 
 The bot needs specific channel names and specific permissions in them.\
 Here they are :
@@ -31,7 +31,7 @@ Here are the settings that you can modify with the config.json and what they mea
 |server.channelListener|The channel that the bot will be listening to create suggestion|
 |server.categoryBox|The category where the bot got p|
 
-# Make it up and running
+# Run it
 
 ## Build
 
@@ -63,8 +63,8 @@ If you can't solve it, send your problem precisely there: https://github.com/aod
 
 Once built, you just need to run the app.js by running the *cmd_start_bot.bat* file.
 
-You can still run the *cmd_compile_and_start_bot.bat* file to do all steps in one click, but I'll recommend running them each file at once, to understand better the problems.
+You can still run the *cmd_compile_and_start_bot.bat* file to do all steps in one click, but I'd recommend running each file at once, for better understading of the problem you're facing.
 
-If errors occur, same as above.
+If any errors occur, same as above.
 
 HF, delta
